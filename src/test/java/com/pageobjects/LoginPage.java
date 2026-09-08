@@ -11,7 +11,7 @@ public class LoginPage {
             sleep(5000);
             $x("//div[text()='Zaloguj się']").click();
             sleep(5000);
-            $x("//span[text()='Kontynuuj przy użyciu Instagramu']").click();
+            $x("//span[text()='Użyj swojego konta na Instagramie']").click();
             sleep(5000);
             $("input[autocomplete='username']").setValue(email);
             $("input[autocomplete='current-password']").setValue(password);

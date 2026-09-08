@@ -2,6 +2,7 @@ package com.pageobjects;
 
 import com.codeborne.selenide.SelenideElement;
 
+import static com.codeborne.selenide.Condition.text;
 import static com.codeborne.selenide.Selenide.*;
 
 
@@ -26,10 +27,12 @@ public class HomePage {
     }
     public HomePage changeView(){
 
-
-        $("div[style*='--padding'] a[href*='piotrw']").click();
+        $x("//span[text()='Profil']").click();
+        //$("div[style*='--padding'] a[href*='piotrw']").click();
         //$("span[style*='transform'] svg[aria-label='Więcej']").click();
         //$x("//div[@tabindex='-1']//span[text()='Obserwowanie']").click();
+        //a[href="/@piotrw112255789"]
+
         return this;
     }
 
