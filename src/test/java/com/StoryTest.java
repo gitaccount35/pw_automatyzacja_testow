@@ -1,10 +1,12 @@
 package com;
 
+import com.codeborne.selenide.WebDriverRunner;
 import com.pageobjects.LoginPage;
 import com.codeborne.selenide.Selenide;
 import com.github.javafaker.Faker;
 import lombok.extern.slf4j.Slf4j;
 import org.testng.annotations.AfterMethod;
+import org.testng.annotations.BeforeMethod;
 import org.testng.annotations.Test;
 
 import static com.common.Constants.*;
@@ -19,7 +21,7 @@ public class StoryTest {
 
     @AfterMethod
     public void afterMethod() {
-        getWebDriver().close();
+        WebDriverRunner.getWebDriver().close();
     }
 
     @Test
@@ -27,10 +29,11 @@ public class StoryTest {
 
         Faker faker = new Faker();
         var tempText = faker.artist().name();
-
         log.info("We are creating story");
-        sleep(10000);
+        sleep(5000);
+
         var homePage = open (URL, LoginPage.class)
+                .maximizeWindow()
                 .login(EMAIL, PASSWORD)
                 .createStory(tempText)
                 .changeView();

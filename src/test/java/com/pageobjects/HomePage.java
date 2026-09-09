@@ -1,9 +1,11 @@
 package com.pageobjects;
 
 import com.codeborne.selenide.SelenideElement;
+import com.codeborne.selenide.WebDriverRunner;
 
 import static com.codeborne.selenide.Condition.text;
 import static com.codeborne.selenide.Selenide.*;
+import static com.codeborne.selenide.WebDriverRunner.getWebDriver;
 
 
 public class HomePage {
@@ -25,6 +27,7 @@ public class HomePage {
 
         return this;
     }
+
     public HomePage changeView(){
 
         $x("//span[text()='Profil']").click();

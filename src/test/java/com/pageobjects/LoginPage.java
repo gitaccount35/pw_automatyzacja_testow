@@ -1,5 +1,7 @@
 package com.pageobjects;
 
+import com.codeborne.selenide.WebDriverRunner;
+
 import static com.codeborne.selenide.Selenide.*;
 
 public class LoginPage {
@@ -22,4 +24,10 @@ public class LoginPage {
             return page(HomePage.class);
         }
 
+    public LoginPage maximizeWindow() {
+
+        WebDriverRunner.getWebDriver().manage().window().maximize();
+
+    return this;
+    }
 }
