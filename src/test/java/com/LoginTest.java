@@ -27,6 +27,7 @@ public class LoginTest {
         //log.info(className);
 
         var homePage = open (URL, LoginPage.class)
+                .maximizeWindow()
                 .login(EMAIL, PASSWORD);
         homePage.getPostButton().shouldBe(visible);
         sleep(5000);
